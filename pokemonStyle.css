@@ -14,3 +14,24 @@ h2{
     font-size: medium;
     font-weight: 400;
 }
+
+h3{
+    color: purple;
+    text-align: center;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.searchBar{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hintButton{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
