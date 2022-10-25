@@ -1,0 +1,16 @@
+body{
+    background-color: #e7d7f3;
+}
+
+h1{
+    color: purple;    
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2{
+    color: purple;
+    text-align: center;
+    font-size: medium;
+    font-weight: 400;
+}
