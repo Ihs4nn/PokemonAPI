@@ -10,15 +10,20 @@
 <body>
     <h1>Welcome to the Purple Poke-Search!</h1>
     <h2>As per usual, you know the drill. Only purple pokemon allowed!</h2>
-    <div id="searchBar" class="searchBar">
-        <input type="text" placeholder="Search...">
-        <button>Click</button>
+
+    <div  class="searchBar">
+        <input id="searchBar" type="text" placeholder="Search...">
+        <button id="searchButton">Click</button>
     </div>
+
     <div>
         <button class="hintButton">Hint!</button>
         <h3></h3>
     </div>
-    <main id="pokemonContainer"></main>
+
+    <main>
+        <div class="pokemonCont"></div>
+    </main>
     <script src="pokemonJava.js"></script>
 </body>
 </html>

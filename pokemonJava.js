@@ -6,16 +6,59 @@ clickHint.addEventListener("click", () => {
 })
 //End of hint button
 
+//Creating a card for the pokemon
+const card = [
+    {
+        "Name": "",
+        "Id": "",
+        "Image": "",
+    }
+]
+
 
 const main = document.querySelector('main')
-const userInput = document.getElementById('searchBar')
-const pokemonSection = document.getElementById('pokemonContainer')
+// card.forEach((pokemon) => createPokemonCard(pokemon))
 
-async function getPokemon() {
-    let pokemon = userInput.value.toLowerCase().trim()
-    const response = await fetch(`https://pokeapi.co/api/v3/pokemon/${pokemon}`)
+const userInput = document.getElementById('searchBar')
+const clickSearch = document.querySelector("#searchButton")
+
+
+async function getPokemon(e) {
+    console.log(e)
+    let input = userInput.value.toLowerCase()
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`)
+    const data = await response.json()
     if (response.status === 404){
-        pokemonSection.innerHTML = "Invalid"
+        alert(`${input} Isnt a real pokemon!`);
+        return true
     }
-    const data = await response.json
+    // const p = document.createElement("p");
+    // p.innerHTML = data.name;
+    // main.appendChild(p);
+    createPokemonCard(data)
+}
+
+//Calls the actual function
+clickSearch.addEventListener("click", (e) => {
+    getPokemon(e);
+})
+
+function createPokemonCard(data){
+    const pokemonName = document.createElement('h2')
+    pokemonName.textContent = ('Name: ' + data.name)
+
+    const pokemonId = document.createElement('h2')
+    pokemonId.textContent = ('Pokemon Id: ' + data.id)
+    console.log(data)
+
+    const pokemonImage = document.createElement('img')
+    pokemonImage.setAttribute('src', data.sprites.front_default)
+
+    const pokemonCard = document.createElement("div");
+    pokemonCard.classList.add("pokemonCard")
+    pokemonCard.appendChild(pokemonName)
+    pokemonCard.appendChild(pokemonId)
+    pokemonCard.appendChild(pokemonImage)
+
+    main.append(pokemonCard)
 }

@@ -35,3 +35,23 @@ h3{
     justify-content: center;
     align-items: center;
 }
+
+.pokemonCard{
+    margin: 0 auto;
+    background-color: plum;
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    border: 3px solid darkmagenta;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    row-gap: 4px;
+    justify-content: space-between;
+    box-shadow: 5px 10px rgb(94, 3, 94);
+}
+
+main{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
